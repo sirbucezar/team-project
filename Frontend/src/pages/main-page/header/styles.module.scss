@@ -1,0 +1,131 @@
+@use '../../../assets/style/global.scss' as *;
+
+.header{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1001;
+   pointer-events: none;
+  //  background: rgba(255, 0, 0, 0.368);
+   @include adaptiv-value('padding-top', 40, 12, 1);
+
+   @media (max-width: 600px){
+    padding: 15px 0px 0px 0px;
+   }
+
+   &__container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+
+      @media (max-width: $md2+px){
+        padding: 0 15px;
+      }
+   }
+
+   &__burger{
+      flex: 0 0 30px;
+      height: 22px;
+      pointer-events: all;
+   }
+
+   &__icon{
+      flex: 0 0 50px;
+      height: 50px;
+      pointer-events: all;
+      @media (max-width: $md2+px){
+         flex: 0 0 44px;
+         height: 44px;
+      }
+
+      @media (max-width: 600px){
+        flex: 0 0 40px;
+        height: 40px;
+      }
+   }
+
+   &__img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+
+      img{
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+
+$burgerColor: #f1f1f1;
+
+.burger {
+  display: none;
+  @media (max-width: $md2+px) {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      width: 30px;
+      height: 30px;
+    }
+    span {
+      background: $burgerColor;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      top: 9px;
+      transition: all ease .3s;
+      border-radius: 100px;
+
+      &:first-child {
+        top: 0;
+        width: 100%;
+      }
+      &:nth-child(2){ 
+        width: 80%;
+        transition: width ease 0.3s;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0;
+        width: 40%;
+      }
+    }
+
+    &.active {
+      span {
+        transform: scale(0);
+        &:nth-child(2){
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          transition: width ease 0.5s;
+        }
+
+        &:first-child {
+          transform: rotate(45deg);
+          top: 9px;
+          width: 100%;
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+          bottom: 9px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

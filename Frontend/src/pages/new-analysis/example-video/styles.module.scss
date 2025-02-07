@@ -1,0 +1,96 @@
+@use '../../../assets/style/global.scss' as *;
+
+.exampleVideo{
+   display: flex;
+   justify-content: space-between;
+   gap: 24px;
+   margin: 24px 0px 0px 0px;
+
+   @media (max-width: 1600px){
+      margin: 24px 0px 20px 0px;
+   }
+   @media (max-width: $md2+px){
+      margin: 24px 0px 15px 0px;
+   }
+   @media (max-width: $md3+px){
+      flex-direction: column;
+   }
+   &__video{
+      flex: 1 1 50%;
+      @media (max-width: $md3+px){
+         flex: 1 1 auto;
+      }
+      
+      video{
+         width: 100%;
+         border-radius: 10px;
+         overflow: hidden;
+      }
+   }
+
+   &__text{
+      flex: 1 1 50%;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 40px 0px 0px;
+      
+
+      @media (max-width: $md2+px){
+         padding: 0px 0px 0px 0px;
+      }
+
+      @media (max-width: $md3+px){
+         flex: 1 1 auto;
+         justify-content: flex-start;
+         align-items: flex-start;
+      }
+
+      span{
+         white-space: nowrap;
+      }
+   }
+
+   &__body{
+      max-width: 400px;
+
+      @media (max-width: $md3+px){
+         max-width: none;
+      }
+   }
+
+   &__title{
+      font-weight: 600;
+      line-height: 1.3;
+      font-size: 24px;
+      margin: 0px 0px 12px 0px;
+
+      @media (max-width: $md1+px){
+         font-size: 20px;
+         margin: 0px 0px 10px 0px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 22px;
+      }
+      @media (max-width: 600px){
+         font-size: 20px;
+      }
+   }
+
+   &__descr{
+      font-size: 14px;
+      line-height: 1.45;
+
+      @media (max-width: $md1+px){
+         font-size: 12px;
+      }
+      @media (max-width: $md3+px){
+         font-size: 14px;
+      }
+      @media (max-width: 600px){
+         font-size: 12px;
+      }
+   }
+}

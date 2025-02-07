@@ -1,0 +1,36 @@
+.hint{
+   // background: #332E20;
+   background: rgba(#ffcc33, 0.55);
+   // background: rgba(#ffcc33, 0.65);
+   // border: 2px solid rgba(#725D1F, 1);
+   padding: 30px 30px;
+   border-radius: 24px;
+   margin: 16px 0px 0px 0px;
+
+   &__body{
+
+   }
+
+   &__title{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      color: #FFF7DD;
+      margin: 0px 0px 10px 0px;
+
+      svg{
+         width: 20px;
+         height: auto;
+         path{
+            fill: #FFF7DD;
+            stroke: #FFF7DD;
+         }
+      }
+   }
+
+   &__descr{
+      color: #FFF7DD;
+      line-height: 1.4;
+   }
+}
